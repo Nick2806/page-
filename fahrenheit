@@ -11,7 +11,7 @@
 
 			function clicked() {
 				let eingabe = document.getElementById("idEingabe").value;
-				let ausgabe = "Die Länge der Eingabe " + eingabe + " ist " + laenge(eingabe) + ".";
+				let ausgabe = "Die Länge der Eingabe " + eingabe + " ist " + toFahrenheit(eingabe) + ".";
 				document.getElementById("idAusgabe").innerHTML = ausgabe;
 			}
 

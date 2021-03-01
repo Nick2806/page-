@@ -1,0 +1,48 @@
+<html>
+   <head>
+    <title>Wertetabelle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <script>
+         "use strict";
+        function fRechnung() {
+            var vKv = parseFloat (document.getElementById("kv").value);
+            var vKf = parseFloat (document.getElementById("kf").value);
+            var vStart = parseFloat (document.getElementById("start").value);
+            var vEnd = parseFloat (document.getElementById("end").value);
+            var vSchritt = parseFloat (document.getElementById("schritt").value);
+            var vKostenfunktion;
+            var vAusgabe = "";
+
+            vAusgabe = vAusgabe + "<table border = 1> <br>";
+            vAusgabe = vAusgabe + "<tr><th>x</th><th>K(x)</th></tr>";
+
+            while (vStart <= vEnd) {
+                vKostenfunktion = vKv * vStart + vKf;
+                vAusgabe = vAusgabe + "<tr><td>" + vStart + "</td><td>" + vKostenfunktion + "</td></tr>";
+                vStart = vStart + vSchritt;    
+            }
+
+            vAusgabe = vAusgabe + "</table>" + "<br>";
+            document.getElementById("ausgabe").innerHTML = vAusgabe;
+        }
+        
+    </script>
+    </head>
+    <body>
+    <h1>Wertetabelle</h1>
+    Variable Kosten: <input id="kv" type="text" value="2">       
+    <br/>
+    fixe Kosten: <input id="kf" type="text" value="20">           
+    <br/>
+    Startwert: <input id="start" type="text" value="-10">         
+    <br/>
+    Endwert: <input id="end" type="text" value="10">            
+    <br/>
+    Schrittweite: <input id="schritt" type="text" value="2">     
+    <br>
+    <button onclick="fRechnung()">Klicke hier für das Ergebniss!</button>         
+    <br>
+    <div id="ausgabe"></div>
+
+</body>
+</html>

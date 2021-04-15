@@ -1,0 +1,48 @@
+<html>
+   <head>
+    <title>Angebotsmonopol</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <script>
+         "use strict";
+        function fRechnung() {
+            var v variable Kosten = parseFloat (document.getElementById("variable Kosten").value);
+            var v fixe Kosten = parseFloat (document.getElementById("fixe Kosten").value);
+            var x;
+            var p(x);
+            var E(x);
+            var K(x);
+            var G(x);
+            var vAusgabe = "";
+
+            vAusgabe = vAusgabe + "<table border = 1> <br>";
+            vAusgabe = vAusgabe + "<tr><th>x</th><th>p(x)</th><th>E(x)</th><th>K(x)</th><th>G(x)</th></tr>";
+
+            while (x != 105) {
+                v p(x) = v fixe Kosten + v variable Kosten * x;
+                v E(x) = v p(x) * x;
+                v K(x) = v fixe Kosten + v variable Kosten * x;
+                v G(x) = E(x) - K(x);
+                vAusgabe + "<tr><td>" + x.toFixed(2) + "</td><td>" + v p(x).toFixed(2) + "</td>+<td>"E(x).toFixed(2)+"</td><td>"K(x).toFixed(2)+"</td><td>"G(x).toFixed(2)+"</td></tr>";
+                v x= v x + 5;
+            }
+
+            vAusgabe = vAusgabe + "</table>" + "<br>";
+            document.getElementById("ausgabe").innerHTML = vAusgabe;
+        }
+        
+    </script>
+    </head>
+    <body>
+    <h1>Angebotsmonopol</h1>
+    Variable Kosten: <input id="variable Kosten" type="text" value="0.20">       
+    <br/>
+    fixe Kosten: <input id="fixe kosten" type="text" value="10">           
+    <br/>
+    
+    <button onclick="fRechnung()">Klicke hier für das Ergebniss!</button>         
+    <br>
+    <div id="ausgabe"></div>
+
+</body>
+</html>
+            
